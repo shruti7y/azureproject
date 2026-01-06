@@ -48,7 +48,7 @@
 							}
 						},
 						{
-							"name": "AzureSQL_lake_copy1",
+							"name": "AzureSQL_lake",
 							"type": "Copy",
 							"dependsOn": [
 								{
@@ -143,11 +143,11 @@
 							}
 						},
 						{
-							"name": "If_incremental_data_copy1",
+							"name": "If_incremental_data",
 							"type": "IfCondition",
 							"dependsOn": [
 								{
-									"activity": "AzureSQL_lake_copy1",
+									"activity": "AzureSQL_lake",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -161,7 +161,7 @@
 								},
 								"ifFalseActivities": [
 									{
-										"name": "Delete1_copy1",
+										"name": "Delete1",
 										"type": "Delete",
 										"dependsOn": [],
 										"policy": {
